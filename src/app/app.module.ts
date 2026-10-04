@@ -2,15 +2,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { MeuPrimeiroComponent } from './meu-primeiro/meu-primeiro.component';
+import { MeuPrimeiro2Component } from './meu-primeiro2/meu-primeiro2.component';
+import { CursosModule } from './cursos/cursos.module';
 
 @NgModule({
-  declarations: [
-    AppComponent
+  declarations: [                    // componentes, diretivas e pipes
+    AppComponent,
+    MeuPrimeiroComponent,
+    MeuPrimeiro2Component
   ],
-  imports: [
-    BrowserModule
+  imports: [                         // módulos que queremos utilizar nesse módulo
+    BrowserModule,
+    CursosModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [],                     // serviços que ficaram disponíveis para os componentes que foram declarados esse módulo
+  bootstrap: [AppComponent]          // só tem no módulo raiz
 })
-export class AppModule { }
+export class AppModule { }           // módulo raiz da aplicação
