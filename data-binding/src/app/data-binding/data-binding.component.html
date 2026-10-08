@@ -1,0 +1,26 @@
+<section class="property-binding">
+
+  <article>
+    <h3>Interpolation / Interpolação</h3>
+    <p>String renderizada com interpolação: {{ url }}</p>
+    <p>Resultado de 1 + 1 é: {{ 1 + 1 }}</p>
+    <p>Resultado de 1 + 1 não é: {{ 1 + 1 + getValor()}}</p>
+    <p>Curso de Angular e gosto do curso: {{ cursoAngular && getCurtirCurso() }}</p>
+  </article>
+
+  <article>
+    <h3>Property Binding</h3>
+    <img src="{{ urlImagem }}">        <!-- Interpolação dentro de um atributo HTML, funciona, mas não é a forma recomendada para propriedades do DOM -->
+    <img [src]="urlImagem">            <!-- Property Binding (forma moderna e mais utilizada), liga a propriedade src à propriedade urlImagem do componente -->
+    <img bind-src="urlImagem">         <!-- Property Binding (forma completa/antiga), equivalente a [src]="urlImagem" -->
+  </article>
+
+  <article>
+    <h3>Class e Style Binding</h3>
+    
+  </article>
+
+
+  <!-- sasa -->
+
+</section>
