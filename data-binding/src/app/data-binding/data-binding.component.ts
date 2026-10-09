@@ -6,6 +6,11 @@ import { Component, OnInit } from '@angular/core';
   // styleUrls: ['./data-binding.component.css']
   styles: [
   `
+    :host {
+      display: block;
+      padding-bottom: 500px;
+    }
+    
     .highlight {
       background-color: yellow;
       font-weight: bold;
@@ -23,6 +28,13 @@ export class DataBindingComponent implements OnInit {
   valorSalvo: string = '';
 
   isMouseOver: boolean = false;
+
+  nome: string = 'abc';
+
+  pessoa: any = {
+    nome: 'Thales',
+    idade: 41
+  }
 
   getValor() {
     return 1;

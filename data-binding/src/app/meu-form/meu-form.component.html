@@ -1,0 +1,39 @@
+<section>
+
+    <article>
+        <h3>Two-way data binding</h3>
+        <div>
+
+            <!-- Two-Way Data Binding manual (Property + Event Binding) -->
+            <input type="text" 
+            [value]="nome"
+            (input)="nome = $event.target.value"
+            >
+
+            <!-- Two-Way Data Binding manual usando ngModel -->
+            <input type="text" 
+            [ngModel]="nome"
+            (ngModelChange)="nome = $event"
+            >
+
+            <!-- Two-Way Data Binding (forma abreviada e mais utilizada) -->
+            <input type="text" [(ngModel)]="nome">
+
+            <!-- Two-Way Data Binding (sintaxe completa/equivalente ao [(ngModel)]) -->
+            <input type="text" bindon-ngModel="nome">
+
+            <p>Você digitou: {{ nome }}</p>
+
+        </div>
+
+        <div>
+
+            <p>Meu nome é {{ pessoa.nome }} e tenho {{ pessoa.idade }} anos de idade.</p>
+
+            <input type="text" [(ngModel)]="pessoa.nome">
+            <input type="text" [(ngModel)]="pessoa.idade">
+
+        </div>
+    </article>
+
+</section>
