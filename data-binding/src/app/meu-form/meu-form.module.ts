@@ -14,7 +14,7 @@ import { MeuFormComponent } from './meu-form.component';
     FormsModule
   ],
   exports: [
-    MeuFormComponent
+    MeuFormComponent   // Exporta o componente para uso em outros módulos
   ]
 })
 export class MeuFormModule { }

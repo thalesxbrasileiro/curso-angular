@@ -14,7 +14,7 @@ import { MeuFormModule } from './meu-form/meu-form.module';
   imports: [
     BrowserModule,
     FormsModule,
-    MeuFormModule
+    MeuFormModule  // Importa o módulo que exporta o MeuFormComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
