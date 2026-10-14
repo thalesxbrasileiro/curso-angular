@@ -1,0 +1,21 @@
+<nav class="navbar sm:navbar-expand bg-1 fg-2">
+  <div class="drawer-body">
+    <ul class="navbar-nav">
+        <a class="nav-link" 
+        [class.active]="aba == 'home'"
+        (click)="aba = 'home'">Home</a>
+        <a class="nav-link" 
+        [class.active]="aba == 'mapa'"
+        (click)="aba = 'mapa'">Mapa</a>
+        <a class="nav-link" 
+        [class.active]="aba == 'lista'"
+        (click)="aba = 'lista'">Lista</a>
+    </ul>
+  </div>
+</nav>
+
+<div class="xl.container" [ngSwitch]="aba">
+  <p *ngSwitchCase="'mapa'">Modo Mapa ativado</p>
+  <p *ngSwitchCase="'lista'">Modo Lista ativado</p>
+  <p *ngSwitchDefault>Home</p>
+</div>
