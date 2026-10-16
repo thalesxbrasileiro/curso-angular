@@ -1,0 +1,15 @@
+
+
+<!-- Acessando um atributo do objeto -->
+<p>Descrição: {{ tarefa.desc }}</p>
+
+<!-- Daria erro -->
+<!-- <p>Responsável: {{ tarefa.responsavel.nome }}</p> -->
+
+<!-- Para não dar erro, poderia fazer: -->
+<!-- <p>Responsável: {{ tarefa.responsavel != null ?  tarefa.responsavel.nome : '' }}</p> -->
+
+<h4>Usando operador elvis/optional chaining</h4>
+
+<p>Responsável: {{ tarefa.responsavel?.nome }}</p>
+<p>Responsável: {{ tarefa.responsavelDois?.usuario?.nome }}</p>
