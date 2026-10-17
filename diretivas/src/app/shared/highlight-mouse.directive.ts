@@ -5,6 +5,9 @@ import { Directive, HostListener, ElementRef, Renderer2, HostBinding } from '@an
 })
 export class HighlightMouseDirective {
 
+  @HostBinding('style.backgroundColor') 
+  backgroundColor: string;
+
   @HostListener('mouseenter') 
   onMouseOver() {
     /*this._renderer.setStyle(
@@ -24,9 +27,6 @@ export class HighlightMouseDirective {
     );*/
     this.backgroundColor = 'white'
   }
-
-  @HostBinding('style.backgroundColor') 
-  backgroundColor: string;
 
   constructor(
     // private _elementRef: ElementRef,
