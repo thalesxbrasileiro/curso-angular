@@ -8,7 +8,7 @@ export class HighlightDirective {
   @Input()
   defaultColor: string = 'white';
 
-  @Input('highLight')
+  @Input('highlight')
   highLightColor: string = 'yellow';
 
   @HostBinding('style.backgroundColor') 
