@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ExemploPipesComponent } from './exemplo-pipes/exemplo-pipes.component';
+import { CamelCasePipe } from './camel-case.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ExemploPipesComponent
+    ExemploPipesComponent,
+    CamelCasePipe
   ],
   imports: [
     BrowserModule
