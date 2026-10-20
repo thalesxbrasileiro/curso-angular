@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class CamelCasePipe implements PipeTransform {
 
-  transform(value: any, ...args: unknown[]): any {
+  transform(value: string, ...args: unknown[]): string {
     let values = value.split(' ')
     let result = '';
 
