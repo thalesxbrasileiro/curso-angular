@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-exemplo-pipes',
-  templateUrl: './exemplo-pipes.component.html',
-  styleUrls: ['./exemplo-pipes.component.scss']
+  selector: 'app-exemplos-pipes',
+  templateUrl: './exemplos-pipes.component.html',
+  styleUrls: ['./exemplos-pipes.component.scss']
 })
-export class ExemploPipesComponent implements OnInit {
+export class ExemplosPipesComponent implements OnInit {
 
   livro: any = {
     titulo: 'Estruturas de Dados e Algoritmos com JavaScript: Escreva um Código JavaScript Complexo e Eficaz Usando a Mais Recente ECMAScript',
@@ -16,6 +16,16 @@ export class ExemploPipesComponent implements OnInit {
     url: 'https://a.co/d/0fCuMe24'
   };
 
+  livros: string[] = ['Java', 'Angular 2'];
+
+  filtro!: string;
+
+  addCurso(valor: string) {
+    this.livros.push(valor);
+    console.log(this.livros);
+    
+  }
+  
   constructor() { }
 
   ngOnInit(): void {
