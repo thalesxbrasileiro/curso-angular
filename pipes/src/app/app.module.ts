@@ -32,7 +32,7 @@ registerLocaleData(localePt, 'pt-BR');
     {
       provide: LOCALE_ID,
       deps: [SettingsService],
-      useFactory: (settingsService: any) => settingsService.getLocale()
+      useFactory: (settingsService: SettingsService) => settingsService.getLocale()
     }
   ],
   bootstrap: [AppComponent]
