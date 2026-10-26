@@ -17,8 +17,9 @@ import { CursosComponent } from './cursos/cursos.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AppRoutingModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
