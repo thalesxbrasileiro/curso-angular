@@ -8,9 +8,15 @@
       <li routerLinkActive="nav-item active">
         <a routerLink="/cursos" class="nav-link">Cursos <span class="sr-only">(current)</span></a>
       </li>
+      <li routerLinkActive="nav-item active">
+        <a [routerLink]="['/cursos', idCurso.value]" class="nav-link">Cursos com ID <span class="sr-only">(current)</span></a>
+      </li>
     </ul>
   </div>
 </nav>
+
 <div class="container">
+    <p>Entre com o ID do curso</p>
+    <input #idCurso placeholder="ID do curso">
     <router-outlet></router-outlet>
 </div>
