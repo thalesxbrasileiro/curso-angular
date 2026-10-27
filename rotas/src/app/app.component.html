@@ -1,9 +1,13 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <a routerLink="" class="navbar-brand">Rotas NG2</a>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-        <a routerLink="/login" class="nav-link">Login</a>
-        <a routerLink="/cursos" class="nav-link">Cursos</a>
+      <li routerLinkActive="nav-item active">
+        <a routerLink="/login" class="nav-link">Login <span class="sr-only">(current)</span></a>
+      </li>
+      <li routerLinkActive="nav-item active">
+        <a routerLink="/cursos" class="nav-link">Cursos <span class="sr-only">(current)</span></a>
+      </li>
     </ul>
   </div>
 </nav>
