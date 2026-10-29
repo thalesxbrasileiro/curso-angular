@@ -1,7 +1,8 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+
+import { CursosService } from '../cursos/cursos.service';
 
 @Component({
   selector: 'app-curso-detalhe',
@@ -10,19 +11,28 @@ import { Subscription } from 'rxjs';
 })
 export class CursoDetalheComponent implements OnInit {
 
-  id!: string;
+  id!: number;
   inscricao!: Subscription;
+  curso!: any;
 
-  constructor(private rotaAtiva: ActivatedRoute) { 
+  constructor(
+    private rotaAtiva: ActivatedRoute,
+    private cursosService: CursosService,
+    private router: Router
+  ) { 
     // this.id = this.rotaAtiva.snapshot.params['id'];
     // console.log(this.rotaAtiva);
-    
   }
 
   ngOnInit(): void {
     this.inscricao = this.rotaAtiva.params.subscribe(
       (params: any) => {
         this.id = params['id'];
+        this.curso = this.cursosService.getCurso(this.id);
+
+        if (this.curso == null) {
+          this.router.navigate(['/naoEncontrado']);
+        }
     });
   }
 
