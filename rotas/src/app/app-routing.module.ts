@@ -9,10 +9,9 @@ import { LoginComponent } from './login/login.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'login', component: LoginComponent }
-  // { path: 'cursos', component: CursosComponent },
-  // { path: 'cursos/:id', component: CursoDetalheComponent },
-  // { path: 'naoEncontrado', component: CursoNaoEncontradoComponent }
+  { path: 'login', component: LoginComponent },
+  // CursosModule usa Lazy Loading
+  { path: 'cursos', loadChildren: () => import('./cursos/cursos.module').then(m => m.CursosModule) }
 ];
 
 @NgModule({
