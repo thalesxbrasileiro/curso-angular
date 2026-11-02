@@ -8,9 +8,9 @@
       <li routerLinkActive="nav-item active">
         <a routerLink="/cursos" [queryParams]="{ pagina: 1 }" class="nav-link">Cursos <span class="sr-only">(current)</span></a>
       </li>
-      <li routerLinkActive="nav-item active">
+      <!-- <li routerLinkActive="nav-item active">
         <a [routerLink]="['/cursos', idCurso.value]" class="nav-link">Cursos com ID <span class="sr-only">(current)</span></a>
-      </li>
+      </li> -->
       <li routerLinkActive="nav-item active">
         <a routerLink="/alunos" class="nav-link">Alunos <span class="sr-only">(current)</span></a>
       </li>
@@ -18,8 +18,8 @@
   </div>
 </nav>
 
-<div class="container">
-    <p>Entre com o ID do curso</p>
-    <input #idCurso placeholder="ID do curso">
+<div class="container pt-3">
+    <!-- <p>Entre com o ID do curso</p>
+    <input #idCurso placeholder="ID do curso"> -->
     <router-outlet></router-outlet>
 </div>

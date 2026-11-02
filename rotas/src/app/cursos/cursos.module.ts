@@ -20,6 +20,6 @@ import { CursosRoutingModule } from './cursos-routing.module';
     CursosRoutingModule
   ],
   exports: [],
-  providers: [CursosService],
+  providers: [CursosService],  // Todos os componentes que estão do declarations terão acesso a esse serviço
 })
 export class CursosModule {}
