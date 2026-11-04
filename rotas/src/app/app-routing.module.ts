@@ -1,3 +1,4 @@
+import { AuthGuard } from './guards/auth.guard';
 //import { CursoNaoEncontradoComponent } from './cursos/curso-nao-encontrado/curso-nao-encontrado.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -8,10 +9,17 @@ import { LoginComponent } from './login/login.component';
 //import { CursoDetalheComponent } from './cursos/curso-detalhe/curso-detalhe.component';
 
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
+  {
+    path: '', component: HomeComponent,
+    canActivate: [AuthGuard]
+  },
   { path: 'login', component: LoginComponent },
   // CursosModule usa Lazy Loading
-  { path: 'cursos', loadChildren: () => import('./cursos/cursos.module').then(m => m.CursosModule) }
+  {
+    path: 'cursos',
+    loadChildren: () => import('./cursos/cursos.module').then(m => m.CursosModule),
+    canActivate: [AuthGuard]
+  }
 ];
 
 @NgModule({
