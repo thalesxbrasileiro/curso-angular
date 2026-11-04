@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,7 +25,8 @@ import { AlunosModule } from './alunos/alunos.module';
     BrowserModule,
     AppRoutingModule,
     //CursosModule,   //Comentado pois está sendo utilizado o lazy loading
-    AlunosModule
+    AlunosModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
