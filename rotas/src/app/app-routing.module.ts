@@ -19,6 +19,11 @@ const appRoutes: Routes = [
     path: 'cursos',
     loadChildren: () => import('./cursos/cursos.module').then(m => m.CursosModule),
     canActivate: [AuthGuard]
+  },
+  {
+    path: 'alunos',
+    loadChildren: () => import('./alunos/alunos.module').then(m => m.AlunosModule),
+    canActivate: [AuthGuard]
   }
 ];
 
