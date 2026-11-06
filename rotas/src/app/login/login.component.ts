@@ -14,6 +14,8 @@ export class LoginComponent implements OnInit {
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
+    this.usuario.nome = 'usuario@email.com';
+    this.usuario.senha = '12345';
   }
 
   fazerLogin() {
