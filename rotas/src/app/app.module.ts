@@ -24,7 +24,7 @@ import { LoginComponent } from './login/login.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    //CursosModule,   //Comentado pois está sendo utilizado o lazy loading
+    // CursosModule,   //Comentado pois está sendo utilizado o lazy loading
     // AlunosModule,  //Comentado pois está sendo utilizado o lazy loading
     FormsModule
   ],

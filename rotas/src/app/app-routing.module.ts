@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { CursosGuard } from './guards/cursos.guard';
-import { AlunosGuard } from './guards/alunos.guard';
+//import { AlunosGuard } from './guards/alunos.guard';
 //import { CursosComponent } from './cursos/cursos.component';
 //import { CursoDetalheComponent } from './cursos/curso-detalhe/curso-detalhe.component';
 
