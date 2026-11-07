@@ -14,7 +14,7 @@ export class CursosGuard implements CanActivateChild {
 
         console.log('guarda de rotas filhas');
         
-        return false;
+        return true;  // False -> Bloqueia a rota
     }
 
 }
