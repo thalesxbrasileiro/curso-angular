@@ -16,12 +16,12 @@ export class AlunoFormComponent implements OnInit, IFormCanDeactivate {
   private formMudou: boolean = false;
 
   constructor(
-    private rotaAtiva: ActivatedRoute,
+    private rota: ActivatedRoute,
     private alunosService: AlunosService
   ) { }
 
   ngOnInit(): void {
-    this.inscricao = this.rotaAtiva.params.subscribe(
+    this.inscricao = this.rota.params.subscribe(
       (params: any) => {
         let id = Number(params['id'])
         this.aluno = this.alunosService.getAluno(id);

@@ -14,13 +14,13 @@ export class AlunoDetalheComponent implements OnInit, OnDestroy {
   inscricao!: Subscription;
 
   constructor(
-    private rotaAtiva: ActivatedRoute,
+    private rota: ActivatedRoute,
     private alunosService: AlunosService,
     private router: Router
   ) { }
 
   ngOnInit(): void {
-    this.inscricao = this.rotaAtiva.params.subscribe(
+    this.inscricao = this.rota.params.subscribe(
       (params: any) => {
         let id = params['id'];
 

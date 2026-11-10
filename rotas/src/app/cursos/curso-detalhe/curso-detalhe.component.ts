@@ -16,16 +16,16 @@ export class CursoDetalheComponent implements OnInit {
   curso!: any;
 
   constructor(
-    private rotaAtiva: ActivatedRoute,
+    private rota: ActivatedRoute,
     private cursosService: CursosService,
     private router: Router
   ) { 
-    // this.id = this.rotaAtiva.snapshot.params['id'];
-    // console.log(this.rotaAtiva);
+    // this.id = this.rota.snapshot.params['id'];
+    // console.log(this.rota);
   }
 
   ngOnInit(): void {
-    this.inscricao = this.rotaAtiva.params.subscribe(
+    this.inscricao = this.rota.params.subscribe(
       (params: any) => {
         this.id = params['id'];
         this.curso = this.cursosService.getCurso(this.id);
