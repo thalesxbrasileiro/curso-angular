@@ -42,7 +42,7 @@ export class AlunoFormComponent implements OnInit {
 
   podeMudarRota() {
     if (this.formMudou) {
-      return confirm('Tem certeza que deseja sair dessa página?');;
+      return confirm('Tem certeza que deseja sair dessa página?');
     }
 
     return true;
