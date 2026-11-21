@@ -6,11 +6,20 @@ ngModel = Liga o input ao formulário e permite acessar seu valor
 
 É preciso importar o FormsModule no módulo da aplicação para que essas diretivas funcionem corretamente.
 -->
+<!-- 
+form-control:	Classe de estilo do Bootstrap.
+ng-untouched/ng-touched	O campo ainda não perdeu o foco / já perdeu o foco.
+ng-pristine/ng-dirty:	O valor ainda não foi alterado / foi alterado pelo usuário.
+ng-valid/ng-invalid:	O valor atende / não atende às validações.
+-->
 
 <form #f="ngForm" (ngSubmit)="onSubmit(f)">
   <div class="form-group mb-3">
     <label for="nome" class="form-label">Nome</label>
-    <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome" [ngModel]="usuario.nome" required minlength="3">
+    <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome" [ngModel]="usuario.nome" required minlength="3" #nome>
+    <div>
+      {{ nome.className }}
+    </div>
   </div>
 
   <div class="form-group mb-3">
