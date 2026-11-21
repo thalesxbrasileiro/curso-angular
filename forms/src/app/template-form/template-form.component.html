@@ -34,5 +34,5 @@ ng-valid/ng-invalid:	O valor atende / não atende às validações.
     </div>
   </div>
   
-  <button type="submit" class="btn-solid theme-primary">Submit</button>
+  <button type="submit" class="btn-solid theme-primary" [disabled]="f.invalid">Submit</button>
 </form>
