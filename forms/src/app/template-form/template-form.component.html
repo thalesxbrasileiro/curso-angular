@@ -18,49 +18,61 @@ ng-valid/ng-invalid:	O valor atende / não atende às validações.
     <label for="nome" class="form-label">Nome</label>
 
     <input type="text" class="form-control" id="nome" placeholder="Nome" 
-      name="nome" [ngModel]="usuario.nome" #nome="ngModel" required minlength="3">
+      name="nome" [ngModel]="usuario.nome" #nome="ngModel" 
+      required minlength="3"
+      [class.is-invalid]="nome.invalid && nome.touched">
     <!-- <div>
       {{ nome.className }}
     </div> -->
-    <div *ngIf="nome.invalid && nome.touched" class="alert theme-danger" role="alert">
-      <p>Nome é obrigatório e deve ter pelo menos 3 caracteres</p>
-      <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
+
+    <div *ngIf="nome.invalid && nome.touched" class="invalid-feedback is-invalid">
+      Nome é obrigatório e deve ter pelo menos 3 caracteres
     </div>
   </div>
 
   <div class="form-group mb-3">
     <label for="email" class="form-label">Email</label>
+    
     <input type="email" class="form-control" id="email" placeholder="nome@email.com"
-      name="email" [ngModel]="usuario.email" #email="ngModel" required email>
-    <div *ngIf="email.invalid && email.touched" class="alert theme-danger" role="alert">
-      <p>Email é obrigatório e deve ser válido</p>
-      <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
+      name="email" [ngModel]="usuario.email" #email="ngModel" 
+      required email
+      [class.is-invalid]="email.invalid && email.touched">
+    
+    <div *ngIf="email.invalid && email.touched" class="invalid-feedback is-invalid">
+      Email é obrigatório e deve ser válido
     </div>
   </div>
 
   <div class="row">
     <div class="col-3">
       <label for="cep" class="form-label">CEP</label>
+
       <input type="text" class="form-control" id="cep" 
-        name="cep" [ngModel]="usuario.cep" #cep="ngModel" required>
-      <div *ngIf="cep.invalid && cep.touched" class="alert theme-danger" role="alert">
-        <p>CEP é obrigatório</p>
-        <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
+        name="cep" [ngModel]="usuario.cep" #cep="ngModel" 
+        required
+        [class.is-invalid]="cep.invalid && cep.touched">
+
+      <div *ngIf="cep.invalid && cep.touched" class="invalid-feedback">
+        CEP é obrigatório
       </div>
     </div>
 
     <div class="col-3">
       <label for="numero" class="form-label">Número</label>
+
       <input type="text" class="form-control" id="numero" 
-        name="numero" [ngModel]="usuario.numero" #numero="ngModel" required>
-      <div *ngIf="numero.invalid && numero.touched" class="alert theme-danger" role="alert">
-        <p>Número é obrigatório</p>
-        <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
+        name="numero" [ngModel]="usuario.numero" #numero="ngModel" 
+        required
+        [class.is-invalid]="numero.invalid && numero.touched">
+
+      <div *ngIf="numero.invalid && numero.touched" class="invalid-feedback">
+        Número é obrigatório
       </div>
     </div>
 
     <div class="col-6">
       <label for="complemento" class="form-label">Complemento</label>
+      
       <input type="text" class="form-control" id="complemento" 
         name="complemento" [ngModel]="usuario.complemento">
     </div>
@@ -68,42 +80,54 @@ ng-valid/ng-invalid:	O valor atende / não atende às validações.
 
   <div class="form-group mt-3">
     <label for="rua" class="form-label">Rua</label>
+    
     <input type="text" class="form-control" id="rua"
-      name="rua" [ngModel]="usuario.rua" #rua="ngModel" required readonly>
-    <div *ngIf="rua.invalid && rua.touched" class="alert theme-danger" role="alert">
-      <p>Rua é obrigatório</p>
-      <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
+      name="rua" [ngModel]="usuario.rua" #rua="ngModel" 
+      required readonly
+      [class.is-invalid]="rua.invalid && rua.touched">
+    
+    <div *ngIf="rua.invalid && rua.touched" class="invalid-feedback">
+      Rua é obrigatório
     </div>
   </div>
 
   <div class="row mt-3">
     <div class="col-5">
       <label for="bairro" class="form-label">Bairro</label>
+      
       <input type="text" class="form-control" id="bairro" 
-        name="bairro" [ngModel]="usuario.bairro" #bairro="ngModel" required>
-      <div *ngIf="bairro.invalid && bairro.touched" class="alert theme-danger" role="alert">
-        <p>Bairro é obrigatório</p>
-        <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
+        name="bairro" [ngModel]="usuario.bairro" #bairro="ngModel" 
+        required
+        [class.is-invalid]="bairro.invalid && bairro.touched">
+      
+      <div *ngIf="bairro.invalid && bairro.touched" class="invalid-feedback">
+        Bairro é obrigatório
       </div>
     </div>
 
     <div class="col-4">
       <label for="cidade" class="form-label">Cidade</label>
+      
       <input type="text" class="form-control" id="cidade" 
-        name="cidade" [ngModel]="usuario.cidade" #cidade="ngModel" required>
-      <div *ngIf="cidade.invalid && cidade.touched" class="alert theme-danger" role="alert">
-        <p>Cidade é obrigatório</p>
-        <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
+        name="cidade" [ngModel]="usuario.cidade" #cidade="ngModel" 
+        required
+        [class.is-invalid]="cidade.invalid && cidade.touched">
+      
+      <div *ngIf="cidade.invalid && cidade.touched" class="invalid-feedback">
+        Cidade é obrigatório
       </div>
     </div>
 
     <div class="col-3">
       <label for="estado" class="form-label">Estado</label>
+      
       <input type="text" class="form-control" id="estado" 
-        name="estado" [ngModel]="usuario.estado" #estado="ngModel" required>
-      <div *ngIf="estado.invalid && estado.touched" class="alert theme-danger" role="alert">
-        <p>Estado é obrigatório</p>
-        <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
+        name="estado" [ngModel]="usuario.estado" #estado="ngModel" 
+        required
+        [class.is-invalid]="estado.invalid && estado.touched">
+      
+      <div *ngIf="estado.invalid && estado.touched" class="invalid-feedback">
+        Estado é obrigatório
       </div>
     </div>
   </div>
