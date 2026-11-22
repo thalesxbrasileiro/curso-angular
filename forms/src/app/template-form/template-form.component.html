@@ -25,7 +25,7 @@ ng-valid/ng-invalid:	O valor atende / não atende às validações.
       {{ nome.className }}
     </div> -->
 
-    <div *ngIf="nome.invalid && nome.touched" class="invalid-feedback is-invalid">
+    <div *ngIf="nome.invalid && nome.touched" class="invalid-feedback">
       Nome é obrigatório e deve ter pelo menos 3 caracteres
     </div>
   </div>
@@ -38,7 +38,7 @@ ng-valid/ng-invalid:	O valor atende / não atende às validações.
       required email
       [class.is-invalid]="email.invalid && email.touched">
     
-    <div *ngIf="email.invalid && email.touched" class="invalid-feedback is-invalid">
+    <div *ngIf="email.invalid && email.touched" class="invalid-feedback">
       Email é obrigatório e deve ser válido
     </div>
   </div>
@@ -83,12 +83,7 @@ ng-valid/ng-invalid:	O valor atende / não atende às validações.
     
     <input type="text" class="form-control" id="rua"
       name="rua" [ngModel]="usuario.rua" #rua="ngModel" 
-      required readonly
-      [class.is-invalid]="rua.invalid && rua.touched">
-    
-    <div *ngIf="rua.invalid && rua.touched" class="invalid-feedback">
-      Rua é obrigatório
-    </div>
+      required> 
   </div>
 
   <div class="row mt-3">
