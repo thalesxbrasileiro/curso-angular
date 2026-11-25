@@ -54,7 +54,7 @@ No Input, podemos usar tando [class.is-invalid] quanto [ngClass] para aplicar cl
       <label for="cep" class="form-label">CEP</label>
 
       <input type="text" class="form-control" id="cep" 
-        name="cep" [ngModel]="usuario.cep" #cep="ngModel" 
+        name="cep" ngModel #cep="ngModel" 
         required
         [class.is-invalid]="cep.invalid && cep.touched">
 
@@ -67,7 +67,7 @@ No Input, podemos usar tando [class.is-invalid] quanto [ngClass] para aplicar cl
       <label for="numero" class="form-label">Número</label>
 
       <input type="text" class="form-control" id="numero" 
-        name="numero" [ngModel]="usuario.numero" #numero="ngModel" 
+        name="numero" ngModel #numero="ngModel" 
         required
         [class.is-invalid]="numero.invalid && numero.touched">
 
@@ -80,7 +80,7 @@ No Input, podemos usar tando [class.is-invalid] quanto [ngClass] para aplicar cl
       <label for="complemento" class="form-label">Complemento</label>
       
       <input type="text" class="form-control" id="complemento" 
-        name="complemento" [ngModel]="usuario.complemento">
+        name="complemento" ngModel>
     </div>
   </div>
 
@@ -88,7 +88,7 @@ No Input, podemos usar tando [class.is-invalid] quanto [ngClass] para aplicar cl
     <label for="rua" class="form-label">Rua</label>
     
     <input type="text" class="form-control" id="rua"
-      name="rua" [ngModel]="usuario.rua" #rua="ngModel" 
+      name="rua" ngModel #rua="ngModel" 
       required> 
   </div>
 
@@ -97,7 +97,7 @@ No Input, podemos usar tando [class.is-invalid] quanto [ngClass] para aplicar cl
       <label for="bairro" class="form-label">Bairro</label>
       
       <input type="text" class="form-control" id="bairro" 
-        name="bairro" [ngModel]="usuario.bairro" #bairro="ngModel" 
+        name="bairro" ngModel #bairro="ngModel" 
         required
         [class.is-invalid]="bairro.invalid && bairro.touched">
       
@@ -110,7 +110,7 @@ No Input, podemos usar tando [class.is-invalid] quanto [ngClass] para aplicar cl
       <label for="cidade" class="form-label">Cidade</label>
       
       <input type="text" class="form-control" id="cidade" 
-        name="cidade" [ngModel]="usuario.cidade" #cidade="ngModel" 
+        name="cidade" ngModel #cidade="ngModel" 
         required
         [class.is-invalid]="cidade.invalid && cidade.touched">
       
@@ -123,7 +123,7 @@ No Input, podemos usar tando [class.is-invalid] quanto [ngClass] para aplicar cl
       <label for="estado" class="form-label">Estado</label>
       
       <input type="text" class="form-control" id="estado" 
-        name="estado" [ngModel]="usuario.estado" #estado="ngModel" 
+        name="estado" ngModel #estado="ngModel" 
         required
         [class.is-invalid]="estado.invalid && estado.touched">
       
