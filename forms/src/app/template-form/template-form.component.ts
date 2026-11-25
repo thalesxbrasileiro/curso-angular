@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { NgForm, NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-template-form',
@@ -25,7 +25,16 @@ export class TemplateFormComponent implements OnInit {
     console.log(form);
 
     // console.log(this.usuario);
-    
+  }
+
+  verificaValidTouched(campo: NgModel) {
+    return campo.invalid && campo.touched;
+  }
+
+  aplicaCssErro(campo: NgModel) {
+    return {
+      'is-invalid': this.verificaValidTouched(campo)
+    };
   }
 
 }

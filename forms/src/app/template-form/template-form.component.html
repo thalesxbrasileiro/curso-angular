@@ -11,6 +11,10 @@ form-control:	Classe de estilo do Bootstrap.
 ng-untouched/ng-touched	O campo ainda não perdeu o foco / já perdeu o foco.
 ng-pristine/ng-dirty:	O valor ainda não foi alterado / foi alterado pelo usuário.
 ng-valid/ng-invalid:	O valor atende / não atende às validações.
+
+No Input, podemos usar tando [class.is-invalid] quanto [ngClass] para aplicar classes condicionalmente: 
+  Exemplo: [class.is-invalid]="campo.invalid && campo.touched"
+  Exemplo: [ngClass]="aplicaCssErro(campo)"
 -->
 
 <form #f="ngForm" (ngSubmit)="onSubmit(f)">
@@ -20,14 +24,16 @@ ng-valid/ng-invalid:	O valor atende / não atende às validações.
     <input type="text" class="form-control" id="nome" placeholder="Nome" 
       name="nome" [ngModel]="usuario.nome" #nome="ngModel" 
       required minlength="3"
-      [class.is-invalid]="nome.invalid && nome.touched">
+      [ngClass]="aplicaCssErro(nome)">
     <!-- <div>
       {{ nome.className }}
     </div> -->
 
-    <div *ngIf="nome.invalid && nome.touched" class="invalid-feedback">
-      Nome é obrigatório e deve ter pelo menos 3 caracteres
-    </div>
+    <!-- Usando o componente de erro personalizado -->
+    <app-campo-control-erro 
+      [mostrarErro]="verificaValidTouched(nome)"
+      msgErro="Nome é obrigatório e deve ter pelo menos 3 caracteres">
+    </app-campo-control-erro>
   </div>
 
   <div class="form-group mb-3">
