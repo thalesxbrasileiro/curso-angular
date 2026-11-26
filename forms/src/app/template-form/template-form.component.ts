@@ -23,6 +23,10 @@ export class TemplateFormComponent implements OnInit {
     console.log(form);
 
     // console.log(this.usuario);
+
+    // Faz a requisição POST para enviar os dados do formulário para o servidor em formato JSON
+    this.http.post('https://httpbin.org/post', JSON.stringify(form.value))
+      .subscribe(dados => console.log(dados));
   }
 
   verificaValidTouched(campo: NgModel) {
@@ -52,7 +56,7 @@ export class TemplateFormComponent implements OnInit {
 
         this.resetaDadosFormulario(form);
 
-        //Faz a chamada
+        //Faz a chamada GET
         this.http.get(`https://viacep.com.br/ws/${cep}/json`)
           .subscribe(
             // dados => console.log(dados)
