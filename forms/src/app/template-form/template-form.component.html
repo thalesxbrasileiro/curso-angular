@@ -59,7 +59,7 @@ No Input, podemos usar tando [class.is-invalid] quanto [ngClass] para aplicar cl
           name="cep" ngModel #cep="ngModel" 
           required
           [class.is-invalid]="cep.invalid && cep.touched"
-          (blur)="consultaCEP($event.target.value)">
+          (blur)="consultaCEP($event.target.value, f)">
 
         <div *ngIf="cep.invalid && cep.touched" class="invalid-feedback">
           CEP é obrigatório

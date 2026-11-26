@@ -35,9 +35,9 @@ export class TemplateFormComponent implements OnInit {
     };
   }
 
-  consultaCEP(valor: string) {
+  consultaCEP(valor: string, form: NgForm) {
     console.log(valor);
-
+    
     //Nova variável "cep" somente com dígitos.
     var cep = valor.replace(/\D/g, '');
 
@@ -50,13 +50,55 @@ export class TemplateFormComponent implements OnInit {
       //Valida o formato do CEP.
       if (validacep.test(cep)) {
 
+        this.resetaDadosFormulario(form);
+
         //Faz a chamada
         this.http.get(`https://viacep.com.br/ws/${cep}/json`)
           .subscribe(
-            dados => console.log(dados));
+            // dados => console.log(dados)
+            dados => this.populaFormulario(dados, form)   // Quando a requisição dá certo
+          );
       }
     }
-    
+  }
+
+  populaFormulario(dados: any, formulario: NgForm) {
+    /*formulario.setValue({              // Exige que todos os campos do formulário sejam preenchidos
+      nome: formulario.value.nome,
+      email: formulario.value.email,
+      endereco: {
+        cep: dados.cep,
+        numero: '',
+        complemento: dados.complemento,
+        rua: dados.logradouro,
+        bairro: dados.bairro,
+        cidade: dados.localidade,
+        estado: dados.uf
+      }
+    });*/
+
+    formulario.form.patchValue({      // Atualiza apenas os campos especificados do formulário, sem exigir todos os campos preenchidos
+      endereco: {
+        cep: dados.cep,
+        complemento: dados.complemento,
+        rua: dados.logradouro,
+        bairro: dados.bairro,
+        cidade: dados.localidade,
+        estado: dados.uf
+      }
+    });
+  }
+
+  resetaDadosFormulario(formulario: NgForm) {
+    formulario.form.patchValue({
+      endereco: {
+        complemento: null,
+        rua: null,
+        bairro: null,
+        cidade: null,
+        estado: null
+      }
+    });
   }
 
 }
