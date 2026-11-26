@@ -50,7 +50,7 @@ No Input, podemos usar tando [class.is-invalid] quanto [ngClass] para aplicar cl
   </div>
 
   <div ngModelGroup="endereco">
-    
+
     <div class="row">
       <div class="col-3">
         <label for="cep" class="form-label">CEP</label>
@@ -58,7 +58,8 @@ No Input, podemos usar tando [class.is-invalid] quanto [ngClass] para aplicar cl
         <input type="text" class="form-control" id="cep" 
           name="cep" ngModel #cep="ngModel" 
           required
-          [class.is-invalid]="cep.invalid && cep.touched">
+          [class.is-invalid]="cep.invalid && cep.touched"
+          (blur)="consultaCEP($event.target.value)">
 
         <div *ngIf="cep.invalid && cep.touched" class="invalid-feedback">
           CEP é obrigatório
